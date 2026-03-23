@@ -78,6 +78,18 @@ export default function RootLayout({
           rel="apple-touch-icon"
           href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='28' fill='%230D1821'/%3E%3Crect x='44' y='38' width='36' height='136' rx='6' fill='%23C9952A'/%3E%3Crect x='44' y='38' width='116' height='36' rx='6' fill='%23C9952A'/%3E%3Crect x='44' y='105' width='88' height='30' rx='6' fill='%23C9952A'/%3E%3C/svg%3E"
         />
+        {/* GA4 Analytics */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=G-483FM7S69Z`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-483FM7S69Z');
+            `,
+          }}
+        />
         {/* JSON-LD */}
         <script
           type="application/ld+json"
