@@ -18,14 +18,13 @@ export function Stack() {
       }}
     >
       <div className="container">
-        <div className="grid gap-20" style={{ gridTemplateColumns: '1fr 2fr' }}>
+        <div className="sidebar-grid">
           {/* Left */}
           <div>
             <div className="section-label">The Stack</div>
             <div className="section-rule" />
             <h2
-              className="text-[36px] font-semibold leading-tight mb-5"
-              style={{ fontFamily: 'var(--font-jakarta)', color: 'var(--text)' }}
+              className="section-headline mb-5" style={{ fontFamily: 'var(--font-jakarta)' }}
             >
               Tools I work with daily
             </h2>

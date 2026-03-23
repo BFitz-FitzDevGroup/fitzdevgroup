@@ -125,6 +125,19 @@ export default function RootLayout({
         />
       </head>
       <body className={`${outfit.className} antialiased`}>
+        {/* Blocking theme script — prevents flash on reload */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme') || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

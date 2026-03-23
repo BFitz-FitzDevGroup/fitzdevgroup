@@ -52,14 +52,13 @@ export function About() {
       }}
     >
       <div className="container">
-        <div className="grid gap-20" style={{ gridTemplateColumns: '2fr 1fr' }}>
+        <div className="sidebar-grid-rev">
           {/* Left */}
           <div>
             <div className="section-label">About</div>
             <div className="section-rule" />
             <h2
-              className="text-[36px] font-semibold leading-tight mb-7"
-              style={{ fontFamily: 'var(--font-jakarta)', color: 'var(--text)' }}
+              className="section-headline mb-7" style={{ fontFamily: 'var(--font-jakarta)' }}
             >
               Senior technical leadership,{' '}
               <em style={{ fontStyle: 'normal', color: 'var(--brass)' }}>
@@ -111,7 +110,7 @@ export function About() {
           </div>
 
           {/* Right — stats */}
-          <div className="flex flex-col gap-0.5 mt-[52px]">
+          <div className="about-stats-row flex flex-col gap-0.5 mt-[52px]">
             {stats.map((s) => (
               <div
                 key={s.label}

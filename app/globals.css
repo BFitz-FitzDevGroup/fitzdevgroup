@@ -127,8 +127,7 @@ img, svg, video {
 
 .wm-nav .wm-tag {
   display: flex;
-  gap: 6px;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .wm-nav .wm-tag span {
@@ -318,37 +317,247 @@ img, svg, video {
 .fade-up-3 { animation-delay: 0.3s; }
 .fade-up-4 { animation-delay: 0.4s; }
 
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LAYOUT UTILITIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Two column grid — stacks on mobile */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* Three column grid — stacks on mobile */
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* Four column grid — 2-col on tablet, 1-col on mobile */
+.four-col-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+/* Sidebar grid: 1fr + 2fr */
+.sidebar-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+}
+
+/* Sidebar grid reversed: 2fr + 1fr */
+.sidebar-grid-rev {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+}
+
+/* Hero grid */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Hero right col */
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Hero eyebrow — desktop version (inside wordmark col) */
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 48px;
+  opacity: 0.85;
+}
+
+/* Hero eyebrow — mobile only (inside right col) */
+.hero-eyebrow-mobile {
+  display: none;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  opacity: 0.85;
+}
+
+.hero-statement {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.hero-body {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-dim);
+  font-weight: 300;
+  transition: color var(--transition);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dimmer);
+  transition: color var(--transition);
+}
+
+.scroll-line {
+  width: 24px;
+  height: 1px;
+  background: var(--text-dimmer);
+  transition: background var(--transition);
+}
+
+/* Buttons */
+.btn-primary {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  background: var(--brass);
+  color: #0D1821;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-ghost {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border: 1px solid var(--border-mid);
+  color: var(--text-dim);
+  border-radius: 3px;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+.btn-ghost:hover { border-color: var(--brass); color: var(--brass); }
+
+/* Section typography */
+.section-headline {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.body-text {
+  font-size: 16px;
+  line-height: 1.85;
+  font-weight: 300;
+  color: var(--text-dim);
+  transition: color var(--transition);
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RESPONSIVE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; width: 100%; }
   .container { padding: 0 20px; }
+
+  /* Show hamburger */
   .hamburger { display: flex; }
 
+  /* Nav wordmark — shrink, hide tagline */
   .wm-nav .chi, .wm-nav .ch2, .wm-nav .chr { font-size: 18px; }
   .wm-nav .wm-row:nth-child(2),
   .wm-nav .wm-row:nth-child(3) { margin-top: -3px; }
   .wm-nav .wm-rule, .wm-nav .wm-tag { display: none; }
 
+  /* Hero — single column, hide wordmark block */
+  .hero-grid { grid-template-columns: 1fr; gap: 0; }
+  .hero-wordmark-col { display: none; }
+  .hero-eyebrow { display: none; }
+  .hero-eyebrow-mobile { display: block; }
+  .hero-statement { font-size: 20px; }
+  .hero-body { font-size: 15px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 14px 20px; }
+
+  /* All multi-column grids → single column */
+  .two-col-grid    { grid-template-columns: 1fr; gap: 48px; }
+  .three-col-grid  { grid-template-columns: 1fr; gap: 10px; }
+  .four-col-grid   { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sidebar-grid    { grid-template-columns: 1fr; gap: 36px; }
+  .sidebar-grid-rev { grid-template-columns: 1fr; gap: 36px; }
+
+  /* Section headings */
+  .section-headline { font-size: 28px; }
+
+  /* Hero wordmark (if visible) */
   .wm-hero .chi, .wm-hero .ch2, .wm-hero .chr { font-size: 40px; }
   .wm-hero .wm-row:nth-child(2) { margin-top: -7px; }
   .wm-hero .wm-row:nth-child(3) { margin-top: -7px; }
   .wm-hero .wm-rule { margin: 14px 0 11px; }
   .wm-hero .wm-tag span { font-size: 10px; }
+
+  /* Stack tech groups */
+  .tech-group-inner { grid-template-columns: 1fr; gap: 10px; }
+
+  /* About stats row */
+  .about-stats-row { flex-direction: row; flex-wrap: wrap; }
+  .about-stats-row .stat-card { flex: 1; min-width: 100px; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+
+  /* Sections */
+  section { padding: 64px 0 !important; }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
+  section { padding: 52px 0 !important; }
 
+  /* Nav */
   .wm-nav .chi, .wm-nav .ch2, .wm-nav .chr { font-size: 16px; }
-  .wm-hero .chi, .wm-hero .ch2, .wm-hero .chr { font-size: 32px; }
-  .wm-hero .wm-row:nth-child(2) { margin-top: -5px; }
-  .wm-hero .wm-row:nth-child(3) { margin-top: -5px; }
-  .wm-hero .wm-tag span { font-size: 8.5px; letter-spacing: 0.08em; }
+  .toggle-label-text { display: none; }
+
+  /* Section headings */
+  .section-headline { font-size: 24px; }
+
+  /* Process 2col → 1col */
+  .four-col-grid { grid-template-columns: 1fr; }
+
+  /* About stats stack */
+  .about-stats-row { flex-direction: column; }
 }
 
 @media (max-width: 360px) {
-  .wm-hero .chi, .wm-hero .ch2, .wm-hero .chr { font-size: 27px; }
   .wm-hero .wm-tag, .wm-hero .wm-rule { display: none; }
 }

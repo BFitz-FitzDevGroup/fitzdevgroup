@@ -37,15 +37,13 @@ export function Hero() {
       />
 
       <div className="container relative z-10 w-full">
-        <div
-          className="grid gap-20 items-center"
-          style={{ gridTemplateColumns: '1fr 1fr' }}
-        >
-          {/* Left — wordmark */}
-          <div className="fade-up fade-up-1">
+        <div className="hero-grid">
+
+          {/* Left — wordmark (hidden on mobile, shown on md+) */}
+          <div className="fade-up fade-up-1 hero-wordmark-col">
             <p
-              className="text-[11px] tracking-[0.22em] uppercase mb-12"
-              style={{ color: 'var(--brass)', opacity: 0.85, fontFamily: 'var(--font-outfit)' }}
+              className="hero-eyebrow"
+              style={{ fontFamily: 'var(--font-outfit)' }}
             >
               Sacramento, CA &nbsp;·&nbsp; Available for Engagements
             </p>
@@ -53,14 +51,18 @@ export function Hero() {
           </div>
 
           {/* Right — statement */}
-          <div className="flex flex-col gap-8">
+          <div className="hero-right-col">
+            {/* Mobile-only eyebrow */}
             <p
-              className="fade-up fade-up-2 text-[22px] leading-relaxed"
-              style={{
-                fontFamily: 'var(--font-jakarta)',
-                fontWeight: 400,
-                color: 'var(--text)',
-              }}
+              className="hero-eyebrow-mobile"
+              style={{ fontFamily: 'var(--font-outfit)' }}
+            >
+              Sacramento, CA &nbsp;·&nbsp; Available for Engagements
+            </p>
+
+            <p
+              className="fade-up fade-up-2 hero-statement"
+              style={{ fontFamily: 'var(--font-jakarta)' }}
             >
               Senior technology consulting for organizations that need someone who{' '}
               <strong style={{ color: 'var(--brass)', fontWeight: 600 }}>
@@ -70,51 +72,25 @@ export function Hero() {
             </p>
 
             <p
-              className="fade-up fade-up-3 text-[17px] leading-[1.8]"
-              style={{
-                color: 'var(--text-dim)',
-                fontWeight: 300,
-                fontFamily: 'var(--font-outfit)',
-              }}
+              className="fade-up fade-up-3 hero-body"
+              style={{ fontFamily: 'var(--font-outfit)' }}
             >
               2+ decades building on the web — from the early commercial internet through
               today&apos;s AI-native stack. I work directly with founders, CTOs, and operations
               teams — no account managers, no handoffs, no surprises.
             </p>
 
-            <div className="fade-up fade-up-4 flex flex-wrap items-center gap-5">
-              <a
-                href="#services"
-                className="text-[11px] tracking-widest uppercase px-7 py-3 rounded-sm font-medium cursor-pointer transition-opacity hover:opacity-85"
-                style={{
-                  background: 'var(--brass)',
-                  color: '#0D1821',
-                  fontFamily: 'var(--font-outfit)',
-                }}
-              >
-                View Services
-              </a>
-              <a
-                href="#contact"
-                className="text-[11px] tracking-widest uppercase px-7 py-3 rounded-sm border cursor-pointer transition-colors duration-200 hover:border-[var(--brass)] hover:text-[var(--brass)]"
-                style={{
-                  border: '1px solid var(--border-mid)',
-                  color: 'var(--text-dim)',
-                  fontFamily: 'var(--font-outfit)',
-                }}
-              >
-                Start a Conversation
-              </a>
+            <div className="fade-up fade-up-4 hero-actions">
+              <a href="#services" className="btn-primary">View Services</a>
+              <a href="#contact" className="btn-ghost">Start a Conversation</a>
             </div>
 
-            <div
-              className="flex items-center gap-3 text-[10px] tracking-[0.16em] uppercase mt-2"
-              style={{ color: 'var(--text-dimmer)', fontFamily: 'var(--font-outfit)' }}
-            >
-              <div className="w-6 h-px" style={{ background: 'var(--text-dimmer)' }} />
+            <div className="hero-scroll" style={{ fontFamily: 'var(--font-outfit)' }}>
+              <div className="scroll-line" />
               Scroll to explore
             </div>
           </div>
+
         </div>
       </div>
     </section>

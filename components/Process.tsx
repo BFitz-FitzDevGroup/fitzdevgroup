@@ -53,7 +53,7 @@ export function Process() {
         </div>
 
         {/* Steps */}
-        <div className="grid gap-0.5" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        <div className="four-col-grid">
           {steps.map((step) => (
             <div
               key={step.num}

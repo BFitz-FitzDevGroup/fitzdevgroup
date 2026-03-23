@@ -34,7 +34,7 @@ export function Services() {
     >
       <div className="container">
         {/* Header */}
-        <div className="grid gap-20 mb-18" style={{ gridTemplateColumns: '1fr 2fr', marginBottom: '72px' }}>
+        <div className="sidebar-grid" style={{ marginBottom: '72px' }}>
           <div>
             <div className="section-label">What I Do</div>
             <div className="section-rule" />
@@ -57,7 +57,7 @@ export function Services() {
         </div>
 
         {/* Cards */}
-        <div className="grid gap-0.5" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+        <div className="three-col-grid">
           {services.map((s) => (
             <div
               key={s.num}
@@ -81,8 +81,7 @@ export function Services() {
                 {s.num}
               </div>
               <h3
-                className="text-[22px] font-semibold mb-4 leading-tight"
-                style={{ fontFamily: 'var(--font-jakarta)', color: 'var(--text)' }}
+                className="section-headline mb-4" style={{ fontSize: '22px', fontFamily: 'var(--font-jakarta)' }}
               >
                 {s.title}
               </h3>
