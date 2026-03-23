@@ -1,3 +1,5 @@
+'use client'
+
 export function Contact() {
   const details = [
     { label: 'Location', value: 'Sacramento, California' },
