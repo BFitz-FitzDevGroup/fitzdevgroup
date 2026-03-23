@@ -21,6 +21,8 @@ export function Wordmark({ size, id }: WordmarkProps) {
 
   function matchWidths() {
     if (!devRowRef.current || !ruleRef.current || !tagRef.current) return
+    // Only apply width matching on hero size
+    if (size !== 'hero') return
     const vw = Math.min(window.innerWidth, document.documentElement.clientWidth)
     const container = devRowRef.current.closest('.container') as HTMLElement | null
     const maxW = container ? container.getBoundingClientRect().width : vw - 40

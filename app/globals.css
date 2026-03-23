@@ -127,7 +127,8 @@ img, svg, video {
 
 .wm-nav .wm-tag {
   display: flex;
-  justify-content: space-between;
+  gap: 6px;
+  align-items: center;
 }
 
 .wm-nav .wm-tag span {
