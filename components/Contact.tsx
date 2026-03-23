@@ -226,7 +226,7 @@ function ContactInner() {
                 <input type="hidden" name="_template" value="table" />
 
                 {/* Name row */}
-                <div className="grid gap-4" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                <div className="contact-name-grid grid gap-4" style={{ gridTemplateColumns: '1fr 1fr' }}>
                   {[
                     { name: 'firstName', label: 'First Name', placeholder: 'First name' },
                     { name: 'lastName',  label: 'Last Name',  placeholder: 'Last name'  },

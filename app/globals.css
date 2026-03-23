@@ -485,6 +485,10 @@ img, svg, video {
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RESPONSIVE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* Contact form — stack name fields on mobile */
+.contact-name-grid {
+  grid-template-columns: 1fr !important;
+}
 
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; width: 100%; }
